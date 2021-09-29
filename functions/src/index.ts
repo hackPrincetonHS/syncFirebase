@@ -1,10 +1,13 @@
 // imports
-import * as dotenv from "dotenv";
-dotenv.config({path: "./.env"});
+import * as functions from "firebase-functions";
+import {exportData} from "./exportData";
 
-import functions = require("firebase-functions");
-import sheets = require("google-spreadsheet");
-import _ = require("lodash");
 
-// consts
-const spreadsheetId = process.env.SHEET_ID;
+exports.exportOrderData = functions.region("us-central1").firestore
+    .document("users/{id}")
+    .onCreate(async (snapshot, _) => {
+      const documentData = snapshot.data();
+      const firstName = documentData.firstName;
+
+      await exportData(firstName);
+    });
