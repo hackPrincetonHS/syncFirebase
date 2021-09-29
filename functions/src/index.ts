@@ -1,9 +1,10 @@
-import * as functions from "firebase-functions";
+// imports
+import * as dotenv from "dotenv";
+dotenv.config({path: "./.env"});
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+import functions = require("firebase-functions");
+import sheets = require("google-spreadsheet");
+import _ = require("lodash");
+
+// consts
+const spreadsheetId = process.env.SHEET_ID;
