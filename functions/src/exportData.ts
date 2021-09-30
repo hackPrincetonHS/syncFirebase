@@ -24,7 +24,7 @@ export async function exportData(
   await jwtAuthPromise;
   await sheet.spreadsheets.values.append({
     auth: jwtClient,
-    spreadsheetId: "1YpO8oe2I8cEImtKjnBscOLbiNnnTaDP1e82YAaymu20",
+    spreadsheetId: process.env.SHEETS_ID,
     // eslint-disable-next-line quotes
     range: `Sheet1!A1:E1`,
     valueInputOption: "RAW",
