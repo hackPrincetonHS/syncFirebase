@@ -3,7 +3,7 @@ import {google} from "googleapis";
 const sheets = google.sheets("v4");
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const serviceAccount = require("../service_account.json");
+const serviceAccount = require("../sheets_updater_service_account.json");
 
 const jwtClient = new google.auth.JWT({
   email: serviceAccount.client_email,
