@@ -25,7 +25,7 @@
     "googleapis": "^88.2.0"
   },
   "devDependencies": {
-    "firebase-functions-test": "^0.2.0",
+    "firebase-functions-test": "^0.3.2",
     "typescript": "^3.8.0"
   },
   "private": true
